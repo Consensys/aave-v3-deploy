@@ -11,6 +11,7 @@ import {
   eAvalancheNetwork,
   eFantomNetwork,
   eOptimismNetwork,
+  eLineaNetwork,
 } from "./types";
 
 require("dotenv").config();
@@ -49,6 +50,15 @@ export const getAlchemyKey = (net: eNetwork) => {
       return process.env.SEPOLIA_ALCHEMY_KEY || ALCHEMY_KEY;
     default:
       return ALCHEMY_KEY;
+  }
+};
+
+export const getInfuraKey = (net: eNetwork) => {
+  switch (net) {
+    case eLineaNetwork.lineaGoerli:
+      return process.env.LINEA_GOERLI_INFURA_KEY || INFURA_KEY;
+    default:
+      return INFURA_KEY;
   }
 };
 
@@ -91,6 +101,9 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
     eEthereumNetwork.sepolia
   )}`,
   [eArbitrumNetwork.goerliNitro]: `https://goerli-rollup.arbitrum.io/rpc`,
+  [eLineaNetwork.lineaGoerli]: `https://linea-goerli.infura.io/v3/${getInfuraKey(
+    eLineaNetwork.lineaGoerli
+  )}`,
 };
 
 export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {

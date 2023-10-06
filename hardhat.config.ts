@@ -12,6 +12,7 @@ import {
   eEthereumNetwork,
   eFantomNetwork,
   eHarmonyNetwork,
+  eLineaNetwork,
   eOptimismNetwork,
   ePolygonNetwork,
   eTenderly,
@@ -120,6 +121,10 @@ export default {
     [eArbitrumNetwork.goerliNitro]: getCommonNetworkConfig(
       eArbitrumNetwork.goerliNitro,
       421613
+    ),
+    [eLineaNetwork.lineaGoerli]: getCommonNetworkConfig(
+      eLineaNetwork.lineaGoerli,
+      59140
     ),
   },
   namedAccounts: {
