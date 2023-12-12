@@ -38,6 +38,7 @@ const func: DeployFunction = async function ({
       chainlinkEthUsdAggregatorProxy[network],
     ],
     ...COMMON_DEPLOY_PARAMS,
+    waitConfirmations: 1,
   });
 };
 

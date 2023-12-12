@@ -67,6 +67,7 @@ const func: DeployFunction = async function ({
     contract: "EmissionManager",
     args: [deployer],
     ...COMMON_DEPLOY_PARAMS,
+    waitConfirmations: 1,
   });
   const emissionManager = (await hre.ethers.getContractAt(
     emissionManagerArtifact.abi,
@@ -79,6 +80,7 @@ const func: DeployFunction = async function ({
     contract: "RewardsController",
     args: [emissionManagerArtifact.address],
     ...COMMON_DEPLOY_PARAMS,
+    waitConfirmations: 1,
   });
   const incentivesImpl = (await hre.ethers.getContractAt(
     incentivesImplArtifact.abi,

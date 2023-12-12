@@ -49,6 +49,7 @@ const func: DeployFunction = async function ({
       ...commonLibraries,
     },
     ...COMMON_DEPLOY_PARAMS,
+    waitConfirmations: 1,
   });
 
   // Initialize implementation

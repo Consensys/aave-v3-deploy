@@ -18,6 +18,7 @@ const func: DeployFunction = async function ({
       from: deployer,
       args: [deployer],
       ...COMMON_DEPLOY_PARAMS,
+      waitConfirmations: 1,
     }
   );
 

@@ -20,6 +20,7 @@ const func: DeployFunction = async function ({
     from: deployer,
     args: [],
     ...COMMON_DEPLOY_PARAMS,
+    waitConfirmations: 1,
   });
 
   await deploy("LiquidationLogic", {

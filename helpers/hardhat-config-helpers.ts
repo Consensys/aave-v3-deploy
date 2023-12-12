@@ -118,6 +118,7 @@ export const LIVE_NETWORKS: iParamsPerNetwork<boolean> = {
 
 const GAS_PRICE_PER_NET: iParamsPerNetwork<string | number> = {
   [eArbitrumNetwork.goerliNitro]: 100000001,
+  [eLineaNetwork.lineaGoerli]: 2_000_000_000,
 };
 
 export const buildForkConfig = ():

@@ -66,6 +66,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     contract: "PoolAddressesProvider",
     args: ["0", deployer],
     ...COMMON_DEPLOY_PARAMS,
+    waitConfirmations: 1,
   });
   const signer = await hre.ethers.getSigner(deployer);
 
